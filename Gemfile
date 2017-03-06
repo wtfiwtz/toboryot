@@ -19,6 +19,7 @@ gem 'rails', '>= 5.1.0.beta1'
 gem 'rubocop'
 # gem 'sqlite3'
 gem 'sass-rails'
+gem 'sprockets', '>= 4.0.0.beta4'
 # gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 gem 'uglifier'

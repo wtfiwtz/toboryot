@@ -26,5 +26,11 @@ gc -m "Rspec"
 ```
 
 ```
-
+cd ..
+rails _5.1.0.beta1_ new toboryot --yarn
+cd toboryot
+brew install yarn
+yarn add webpack
+bundle update
+gc -m "Install Yarn"
 ```

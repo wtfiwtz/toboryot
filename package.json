@@ -1,0 +1,7 @@
+{
+  "name": "toboryot",
+  "private": true,
+  "dependencies": {
+    "webpack": "^2.2.1"
+  }
+}

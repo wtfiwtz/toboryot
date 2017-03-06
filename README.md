@@ -20,3 +20,11 @@ bundle update
 gc -m "Rubocop"
 ```
 
+```
+rails g rspec:install
+gc -m "Rspec"
+```
+
+```
+
+```

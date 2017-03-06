@@ -44,5 +44,13 @@ gc -m "Install React"
 ```
 
 ```
-
+createuser toyrobot -W
+createdb -O toyrobot toyrobot
+createuser toyrobot_test -W
+createdb -O toyrobot_test toyrobot_test
+rails g migration CreateTable session:integer
+rails g migration CreateRobot x:integer y:integer f:integer table:references
+rake db:migrate
+rake db:migrate RAILS_ENV=test
+gc -m "Setup basic models"
 ```

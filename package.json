@@ -1,7 +1,28 @@
 {
   "name": "toboryot",
   "private": true,
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server"
+  },
   "dependencies": {
-    "webpack": "^2.2.1"
+    "babel": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.26.2",
+    "es6lint": "^2017.2.27",
+    "lodash": "^4.17.4",
+    "postcss-loader": "^1.3.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "3.0.0-beta.6",
+    "redux": "^3.6.0",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
   }
 }

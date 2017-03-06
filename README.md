@@ -34,3 +34,15 @@ yarn add webpack
 bundle update
 gc -m "Install Yarn"
 ```
+
+```
+yarn add react react-dom es6lint redux lodash
+yarn add babel-core babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-2 
+yarn add css-loader postcss-loader react-hot-loader@3.0.0-beta.6 style-loader webpack webpack-dev-server
+yarn add classnames
+gc -m "Install React"
+```
+
+```
+
+```

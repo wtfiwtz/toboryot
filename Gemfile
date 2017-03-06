@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -5,32 +7,33 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '>= 5.1.0.beta1'
-# gem 'sqlite3'
+# gem 'bcrypt'
+gem 'brakeman'
+gem 'coffee-rails'
+gem 'jbuilder'
+gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'coffee-rails'
-# gem 'therubyracer', platforms: :ruby
-
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
+gem 'rails', '>= 5.1.0.beta1'
 # gem 'redis'
-# gem 'bcrypt'
-
-# gem 'capistrano-rails', group: :development
+gem 'rubocop'
+# gem 'sqlite3'
+gem 'sass-rails'
+# gem 'therubyracer', platforms: :ruby
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
 end
 
 group :development do
-  gem 'web-console'
+  gem 'capistrano-rails'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

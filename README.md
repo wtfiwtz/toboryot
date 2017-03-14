@@ -54,3 +54,10 @@ rake db:migrate
 rake db:migrate RAILS_ENV=test
 gc -m "Setup basic models"
 ```
+
+```
+yarn add react-router@4.0.0-beta.7 react-router-redux react-redux react-router-dom
+yarn add isomorphic-fetch redux-thunk
+bundle install
+gc -m "Add React Router v4"
+```

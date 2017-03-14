@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server"
+    "start": "APP_ENV=development webpack-dev-server"
   },
   "dependencies": {
     "babel": "^6.23.0",
@@ -15,12 +15,18 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.26.2",
     "es6lint": "^2017.2.27",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
     "postcss-loader": "^1.3.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-hot-loader": "3.0.0-beta.6",
+    "react-redux": "^5.0.3",
+    "react-router": "4.0.0-beta.7",
+    "react-router-dom": "^4.0.0-beta.6",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
     "style-loader": "^0.13.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"

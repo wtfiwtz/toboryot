@@ -21,18 +21,28 @@ class RobotsController < ApplicationController
   end
 
   def left
+    validate_place
+    @table.robot.left!
     render json: @table.robot
   end
 
   def right
+    validate_place
+    @table.robot.right!
     render json: @table.robot
   end
 
   def move
+    validate_place
+    @table.robot.forward!
     render json: @table.robot
   end
 
   private
+
+  def validate_place
+    raise ActionController::BadRequest, 'You must PLACE first' unless @table.robot
+  end
 
   def set_table
     @table = Table.find_by!(session: params[:table_id])

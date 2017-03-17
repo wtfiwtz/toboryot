@@ -131,10 +131,10 @@ function executeMove(session) {
   return function (dispatch) {
     dispatch(requestMove())
     return fetch(`http://api.toboryot.local:3000/tables/${session}/robots/move.json`, { method: 'POST' })
-      .then(response => response.json())
-      .then(json =>
-        dispatch(receiveMove(json))
-      )
+      .then(response => checkStatus(response, dispatch, receiveMove))
+      .catch(err => {
+        alert(err.error)
+      })
   }
 }
 
@@ -142,10 +142,10 @@ function executeLeft(session) {
   return function (dispatch) {
     dispatch(requestLeft())
     return fetch(`http://api.toboryot.local:3000/tables/${session}/robots/left.json`, { method: 'POST' })
-      .then(response => response.json())
-      .then(json =>
-        dispatch(receiveLeft(json))
-      )
+      .then(response => checkStatus(response, dispatch, receiveLeft))
+      .catch(err => {
+        alert(err.error)
+      })
   }
 }
 
@@ -153,10 +153,10 @@ function executeRight(session) {
   return function (dispatch) {
     dispatch(requestRight())
     return fetch(`http://api.toboryot.local:3000/tables/${session}/robots/right.json`, { method: 'POST' })
-      .then(response => response.json())
-      .then(json =>
-        dispatch(receiveRight(json))
-      )
+      .then(response => checkStatus(response, dispatch, receiveRight))
+      .catch(err => {
+        alert(err.error)
+      })
   }
 }
 
@@ -164,10 +164,10 @@ function executeReport(session) {
   return function (dispatch) {
     dispatch(requestReport())
     return fetch(`http://api.toboryot.local:3000/tables/${session}/robots.json`)
-      .then(response => response.json())
-      .then(json =>
-        dispatch(receiveReport(json))
-      )
+      .then(response => checkStatus(response, dispatch, receiveReport))
+      .catch(err => {
+        alert(err.error)
+      })
   }
 }
 

@@ -4,6 +4,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session # :exception
 
+  rescue_from ActiveRecord::RecordInvalid, with: :bad_request
   rescue_from ActionController::BadRequest, with: :bad_request
   rescue_from ArgumentError, with: :bad_request
 

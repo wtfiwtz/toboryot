@@ -23,19 +23,19 @@ class RobotsController < ApplicationController
   def left
     validate_place
     @table.robot.left!
-    render json: @table.robot
+    render json: { robot: @table.robot }
   end
 
   def right
     validate_place
     @table.robot.right!
-    render json: @table.robot
+    render json: { robot: @table.robot }
   end
 
   def move
     validate_place
     @table.robot.forward!
-    render json: @table.robot
+    render json: { robot: @table.robot }
   end
 
   private

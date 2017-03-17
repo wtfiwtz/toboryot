@@ -38,12 +38,11 @@ function requestPlace(x, y, f) {
 }
 
 function receivePlace(json) {
-  console.log(json)
   return {
     type: RECEIVE_PLACE,
-    x: json.x,
-    y: json.y,
-    f: json.f,
+    x: json.robot.x,
+    y: json.robot.y,
+    f: json.robot.f,
     receivedAt: Date.now()
   }
 }
@@ -57,6 +56,9 @@ function requestMove() {
 function receiveMove(json) {
   return {
     type: RECEIVE_MOVE,
+    x: json.robot.x,
+    y: json.robot.y,
+    f: json.robot.f,
     receivedAt: Date.now()
   }
 }
@@ -70,6 +72,9 @@ function requestLeft() {
 function receiveLeft(json) {
   return {
     type: RECEIVE_LEFT,
+    x: json.robot.x,
+    y: json.robot.y,
+    f: json.robot.f,
     receivedAt: Date.now()
   }
 }
@@ -83,6 +88,9 @@ function requestRight() {
 function receiveRight(json) {
   return {
     type: RECEIVE_RIGHT,
+    x: json.robot.x,
+    y: json.robot.y,
+    f: json.robot.f,
     receivedAt: Date.now()
   }
 }
@@ -96,6 +104,9 @@ function requestReport() {
 function receiveReport(json) {
   return {
     type: RECEIVE_REPORT,
+    x: json.robot.x,
+    y: json.robot.y,
+    f: json.robot.f,
     receivedAt: Date.now()
   }
 }
@@ -116,6 +127,7 @@ function executePlace(session, x, y, f) {
             body: JSON.stringify({ x: x, y: y, f: f.toLowerCase() }) })
       .then(response => checkStatus(response, dispatch, receivePlace))
       .catch(err => {
+        console.log(err)
         alert(err.error)
       })
   }
@@ -133,6 +145,7 @@ function executeMove(session) {
     return fetch(`http://api.toboryot.local:3000/tables/${session}/robots/move.json`, { method: 'POST' })
       .then(response => checkStatus(response, dispatch, receiveMove))
       .catch(err => {
+        console.log(err)
         alert(err.error)
       })
   }
@@ -144,6 +157,7 @@ function executeLeft(session) {
     return fetch(`http://api.toboryot.local:3000/tables/${session}/robots/left.json`, { method: 'POST' })
       .then(response => checkStatus(response, dispatch, receiveLeft))
       .catch(err => {
+        console.log(err)
         alert(err.error)
       })
   }
@@ -155,6 +169,7 @@ function executeRight(session) {
     return fetch(`http://api.toboryot.local:3000/tables/${session}/robots/right.json`, { method: 'POST' })
       .then(response => checkStatus(response, dispatch, receiveRight))
       .catch(err => {
+        console.log(err)
         alert(err.error)
       })
   }
@@ -166,6 +181,7 @@ function executeReport(session) {
     return fetch(`http://api.toboryot.local:3000/tables/${session}/robots.json`)
       .then(response => checkStatus(response, dispatch, receiveReport))
       .catch(err => {
+        console.log(err)
         alert(err.error)
       })
   }

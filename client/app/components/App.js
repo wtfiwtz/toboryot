@@ -100,10 +100,16 @@ class App extends React.Component {
     return true
   }
 
+  renderReport() {
+    // console.log(this.props)
+    return this.props.alert ? <div style={{ backgroundColor: '#8F8' }}>{this.props.alert}</div> : null
+  }
+
   render() {
     return (
       <div className={cx('App')}>
         <h2>Hello, Toy Robot</h2>
+        { this.renderReport() }
         <div>
           <input type="text" size="80" value={this.state.currentCommand} onChange={this.handleChange}
                  onKeyPress={this.handleKeyPress} />
@@ -127,7 +133,8 @@ App.propTypes = {
 function mapStateToProps(state) {
   return {
     commands: state.table.commands,
-    session: state.table.session
+    session: state.table.session,
+    alert: state.table.alert
   }
 }
 

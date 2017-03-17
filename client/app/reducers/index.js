@@ -24,7 +24,12 @@ function table(state = { commands: []}, action) {
     return Object.assign({}, state, {
       x: action.x,
       y: action.y,
-      f: action.f
+      f: action.f,
+      alert: action.alert
+    })
+  } else if (action.type === 'RECEIVE_ERROR') {
+    return Object.assign({}, state, {
+      alert: action.alert
     })
 
   } else {

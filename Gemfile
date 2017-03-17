@@ -27,6 +27,7 @@ gem 'uglifier'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
 end
 
